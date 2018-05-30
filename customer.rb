@@ -31,8 +31,9 @@ def alcohol_level_check
   @alcohol_level <= 10
 end
 
-
-
+def drink_alcohol(drink)
+ self.increase_alcohol_level(drink.alcohol_level())
+end
 
 
 

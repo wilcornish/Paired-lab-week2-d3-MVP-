@@ -62,6 +62,11 @@ def test_prove_alcohol_level_below_10__fail
   assert_equal(false, @customer1.alcohol_level_check())
 end
 
+def test_customer_increase_alcohol_level_with_drink
+  @customer1.drink_alcohol(@drink1)
+  assert_equal(1, @customer1.alcohol_level())
+end
+
 
 
 
