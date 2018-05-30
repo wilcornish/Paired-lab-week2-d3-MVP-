@@ -19,7 +19,13 @@ def pay(pub, drink)
   pub.recieve_money(price)
 end
 
+def increase_alcohol_level(increase)
+  @alcohol_level += increase
+end
 
+def age_check()
+  @age >= 18
+end
 
 
 
