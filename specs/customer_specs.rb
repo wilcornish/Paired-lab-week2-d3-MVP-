@@ -6,7 +6,8 @@ require("minitest/rg")
 class CustomerTest < MiniTest::Test
 
   def setup
-    @customer = Customer.new("Alistar MacKenzie",100)
+    @customer1 = Customer.new("Alistar MacKenzie",100, 64)
+    @customer2 = Customer.new("Small Kevin", 5, 16)
     @drink1 = Drink.new("Tennents", 4)
     @drink2 = Drink.new("Vodka", 4)
     drinks = [@drink1, @drink2]
@@ -14,23 +15,26 @@ class CustomerTest < MiniTest::Test
   end
 
 def test_customer_has_name
-  assert_equal("Alistar MacKenzie", @customer.name())
+  assert_equal("Alistar MacKenzie", @customer1.name())
 end
 
 def test_customer_has_money
-  assert_equal(100, @customer.wallet())
+  assert_equal(100, @customer1.wallet())
 end
 
 def test_customer_can_decrease_wallet
-  @customer.decrease_wallet(4)
-  assert_equal(96, @customer.wallet())
+  @customer1.decrease_wallet(4)
+  assert_equal(96, @customer1.wallet())
 end
 
 def test_customer_can_pay_for_drink
-  @customer.pay(@pub1,"Tennents")
-  assert_equal(96, @customer.wallet())
+  @customer1.pay(@pub1,"Tennents")
+  assert_equal(96, @customer1.wallet())
 end
 
+def test_customer_has_age
+  assert_equal(64, @customer1.age())
+end
 
 
 
