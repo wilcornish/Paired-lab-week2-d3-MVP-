@@ -22,8 +22,8 @@ end
     return drink.price()
   end
 
-  def serve(customer)
-    return customer.alcohol_level() && customer.age_check()
+  def can_serve(customer)
+    return(customer.alcohol_level_check() && customer.age_check())
   end
 
 

@@ -40,11 +40,16 @@ class PubTest < MiniTest::Test
   end
 
   def test_pub_allow_service
-    assert_equal(true, @pub1.serve(@customer1))
+    assert_equal(true, @pub1.can_serve(@customer1))
   end
 
-  def test_pub_refuse_service
-    assert_equal(false, @pub1.serve(@customer2))
+  def test_pub_refuse_service__underage
+    assert_equal(false, @pub1.can_serve(@customer2))
+  end
+
+  def test_pub_refuse_service__drunk
+    @customer1.increase_alcohol_level(11)
+    assert_equal(false, @pub1.can_serve(@customer1))
   end
 
 end

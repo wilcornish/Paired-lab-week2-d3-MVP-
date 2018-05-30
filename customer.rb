@@ -15,7 +15,7 @@ end
 
 def pay(pub, drink)
   price  = pub.drink_price(drink)
-  @wallet -= price
+  self.decrease_wallet(price)
   pub.recieve_money(price)
 end
 
