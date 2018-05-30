@@ -1,9 +1,10 @@
 class Pub
-  attr_reader(:name, :drinks, :till)
+  attr_reader(:name, :drinks, :food, :till)
 
-def initialize(name, drinks)
+def initialize(name, drinks, food)
   @name = name
   @drinks = drinks
+  @food = food
   @till = 0
 end
 
@@ -13,13 +14,24 @@ end
 
   def get_drink(name)
     for drink in @drinks
-    return drink if drink.name() == name
-  end
+      return drink if drink.name == name
+    end
   end
 
   def drink_price(name)
     drink = self.get_drink(name)
-    return drink.price()
+    return drink.price
+  end
+
+  def get_food(name)
+    for food in @food
+      return food if food.name == name
+    end
+  end
+
+  def food_price(name)
+    food = self.get_food(name)
+    return food.price()
   end
 
   def can_serve(customer)
@@ -28,7 +40,7 @@ end
 
   def serve(customer, drink)
   if self.can_serve(customer)
-    customer.pay(self,drink)
+    customer.pay_drink(self,drink)
   else
     return "I can't serve you"
   end

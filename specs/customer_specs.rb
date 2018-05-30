@@ -14,7 +14,7 @@ class CustomerTest < MiniTest::Test
     @drink2 = Drink.new("Vodka", 4, 1)
     food = [@food1]
     drinks = [@drink1, @drink2]
-    @pub1 = Pub.new("Jolly Judge", food, drinks)
+    @pub1 = Pub.new("Jolly Judge",drinks, food)
   end
 
 def test_customer_has_name
@@ -35,10 +35,10 @@ def test_customer_can_pay_for_drink
   assert_equal(96, @customer1.wallet())
 end
 
-# def test_customer_can_pay_for_food
-#   @customer1.pay_food(@pub1,"Pie")
-#   assert_equal(96, @customer1.wallet())
-# end
+def test_customer_can_pay_for_food
+  @customer1.pay_food(@pub1,"Pie")
+  assert_equal(96, @customer1.wallet())
+end
 
 def test_customer_has_age
   assert_equal(64, @customer1.age())
