@@ -36,7 +36,9 @@ def test_customer_has_age
   assert_equal(64, @customer1.age())
 end
 
-
+def test_customer_alcohol_level
+  assert_equal(0, @customer1.alcohol_level())
+end 
 
 
 
