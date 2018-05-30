@@ -52,4 +52,15 @@ class PubTest < MiniTest::Test
     assert_equal(false, @pub1.can_serve(@customer1))
   end
 
+  def test_can_serve_drink
+    @pub1.serve(@customer1, "Tennents")
+    assert_equal(4, @pub1.till)
+  end
+
+  def test_cant_serve_drink
+    @pub1.serve(@customer2, "Vodka")
+    assert_equal(0, @pub1.till)
+  end
+
+
 end

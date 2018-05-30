@@ -26,6 +26,15 @@ end
     return(customer.alcohol_level_check() && customer.age_check())
   end
 
+  def serve(customer, drink)
+  if self.can_serve(customer)
+    customer.pay(self,drink)
+  else
+    return "I can't serve you"
+  end
+  end
+
+
 
 
 
