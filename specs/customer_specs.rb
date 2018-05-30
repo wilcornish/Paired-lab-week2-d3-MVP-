@@ -8,6 +8,7 @@ class CustomerTest < MiniTest::Test
   def setup
     @customer1 = Customer.new("Alistar MacKenzie",100, 64)
     @customer2 = Customer.new("Small Kevin", 5, 16)
+    @food1 = Food.new("Pie", 4, 1)
     @drink1 = Drink.new("Tennents", 4, 1)
     @drink2 = Drink.new("Vodka", 4, 1)
     drinks = [@drink1, @drink2]

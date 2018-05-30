@@ -1,6 +1,7 @@
 require("minitest/autorun")
 require_relative("../pub.rb")
 require_relative("../drink.rb")
+require_relative("../food.rb")
 require_relative("../customer.rb")
 require("minitest/rg")
 class PubTest < MiniTest::Test
@@ -8,10 +9,12 @@ class PubTest < MiniTest::Test
   def setup
     @customer1 = Customer.new("Alistar MacKenzie",100, 64)
     @customer2 = Customer.new("Small Kevin", 5, 16)
+    @food1 = Food.new("Pie", 4, 1)
     @drink1 = Drink.new("Tennents", 4, 1)
     @drink2 = Drink.new("Vodka", 4, 1)
+    food = [@food1]
     drinks = [@drink1, @drink2]
-    @pub1 = Pub.new("Jolly Judge", drinks)
+    @pub1 = Pub.new("Jolly Judge", drinks, food)
   end
 
   def test_pub_name
@@ -37,6 +40,14 @@ class PubTest < MiniTest::Test
 
   def test_pub_get_drink_price
     assert_equal(4, @pub1.drink_price("Tennents"))
+  end
+
+  def test_get_food_by_name
+    assert_equal(@food1, @pub1.get_food("Pie"))
+  end
+
+  def test_pub_get_food_price
+    assert_equal(4, @pub1.food_price("Pie"))
   end
 
   def test_pub_allow_service
