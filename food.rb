@@ -1,11 +1,11 @@
 class Food
 
-  attr_reader :name, :price, :rejuvination_level
+  attr_reader :name, :price, :rejuvenation_level
 
-  def initialize (name, price, rejuvination_level)
+  def initialize (name, price, rejuvenation_level)
     @name = name
     @price = price
-    @rejuvination_level = rejuvination_level
+    @rejuvenation_level = rejuvenation_level
   end
 
 end

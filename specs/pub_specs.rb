@@ -3,7 +3,7 @@ require_relative("../pub.rb")
 require_relative("../drink.rb")
 require_relative("../food.rb")
 require_relative("../customer.rb")
-require("minitest/rg")
+
 class PubTest < MiniTest::Test
 
   def setup
@@ -64,14 +64,18 @@ class PubTest < MiniTest::Test
   end
 
   def test_can_serve_drink
-    @pub1.serve(@customer1, "Tennents")
+    @pub1.serve_drink(@customer1, "Tennents")
     assert_equal(4, @pub1.till)
   end
 
   def test_cant_serve_drink
-    @pub1.serve(@customer2, "Vodka")
+    @pub1.serve_drink(@customer2, "Vodka")
     assert_equal(0, @pub1.till)
   end
 
+  def test_can_serve_food
+    @pub1.serve_food(@customer1, "Pie")
+    assert_equal(4, @pub1.till)
+  end
 
 end

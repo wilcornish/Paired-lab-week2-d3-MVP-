@@ -1,12 +1,12 @@
 class Pub
   attr_reader(:name, :drinks, :food, :till)
 
-def initialize(name, drinks, food)
-  @name = name
-  @drinks = drinks
-  @food = food
-  @till = 0
-end
+  def initialize(name, drinks, food)
+    @name = name
+    @drinks = drinks
+    @food = food
+    @till = 0
+  end
 
   def recieve_money(income)
     @till += income
@@ -38,46 +38,16 @@ end
     return(customer.alcohol_level_check() && customer.age_check())
   end
 
-  def serve(customer, drink)
-  if self.can_serve(customer)
-    customer.pay_drink(self,drink)
-  else
-    return "I can't serve you"
+  def serve_drink(customer, drink)
+    if self.can_serve(customer)
+        customer.pay_drink(self,drink)
+      else
+        return "I can't serve you"
+    end
   end
+
+  def serve_food(customer, food)
+    customer.pay_food(self, food)
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 end
