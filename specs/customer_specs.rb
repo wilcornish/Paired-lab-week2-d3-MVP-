@@ -53,6 +53,14 @@ def test_prove_appropritate_age__deny
   assert_equal(false, @customer2.age_check())
 end
 
+def test_prove_alcohol_level_below_10__pass
+  assert_equal(true, @customer1.alcohol_level_check())
+end
+
+def test_prove_alcohol_level_below_10__fail
+  @customer1.increase_alcohol_level(11)
+  assert_equal(false, @customer1.alcohol_level_check())
+end
 
 
 

@@ -27,6 +27,11 @@ def age_check()
   @age >= 18
 end
 
+def alcohol_level_check
+  @alcohol_level <= 10
+end
+
+
 
 
 
