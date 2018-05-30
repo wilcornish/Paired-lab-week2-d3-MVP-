@@ -41,4 +41,9 @@ class Customer
    self.increase_alcohol_level(drink.alcohol_level())
   end
 
+  def eat(food)
+    @alcohol_level = @alcohol_level -  food.rejuvenation_level
+    @alcohol_level = 0 if @alcohol_level < 0
+  end
+
 end

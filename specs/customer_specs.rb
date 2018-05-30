@@ -75,4 +75,9 @@ class CustomerTest < MiniTest::Test
     assert_equal(1, @customer1.alcohol_level())
   end
 
+  def test_customer_reduce_alcohol_level_with_food
+    @customer1.drink_alcohol(@drink1)
+    @customer1.eat(@food1)
+    assert_equal(0, @customer1.alcohol_level())
+  end
 end
