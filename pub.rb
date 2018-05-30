@@ -7,6 +7,9 @@ def initialize(name, drinks)
   @till = 0
 end
 
+  def recieve_money(income)
+    @till += income
+  end
 
 
 

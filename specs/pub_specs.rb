@@ -22,4 +22,8 @@ class PubTest < MiniTest::Test
     assert_equal([@drink1],@pub1.drinks())
   end
 
+  def test_pub_can_recieve_money
+    @pub1.recieve_money(4)
+    assert_equal(4, @pub1.till())
+  end
 end
