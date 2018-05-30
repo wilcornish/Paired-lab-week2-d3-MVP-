@@ -7,8 +7,6 @@ class FoodTest < MiniTest::Test
     @food1 = Food.new("Pie", 4, 1)
   end
 
-
-
     def test_food_name
       assert_equal("Pie",@food1.name)
     end

@@ -12,9 +12,9 @@ class PubTest < MiniTest::Test
     @food1 = Food.new("Pie", 4, 1)
     @drink1 = Drink.new("Tennents", 4, 1)
     @drink2 = Drink.new("Vodka", 4, 1)
-    food = [@food1]
     drinks = [@drink1, @drink2]
-    @pub1 = Pub.new("Jolly Judge", drinks, food)
+    food = [@food1]
+    @pub1 = Pub.new("Jolly Judge",drinks, food)
   end
 
   def test_pub_name
