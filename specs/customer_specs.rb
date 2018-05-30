@@ -26,6 +26,11 @@ def test_customer_can_decrease_wallet
   assert_equal(96, @customer.wallet())
 end
 
+def test_customer_can_pay_for_drink
+  @customer.pay(@pub1,"Tennents")
+  assert_equal(96, @customer.wallet())
+end
+
 
 
 
