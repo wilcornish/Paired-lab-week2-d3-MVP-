@@ -17,18 +17,12 @@ end
   end
   end
 
+  def drink_price(name)
+    drink = self.get_drink(name)
+    return drink.price()
+  end
 
 
-
-
-
-
-
-  # def get_drink(name)
-  #   drink_index = @drinks.index(name)
-  #   p drink_index
-  #   return @drinks.at(drink_index)
-  # end
 
 
 

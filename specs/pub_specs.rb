@@ -32,4 +32,9 @@ class PubTest < MiniTest::Test
     assert_equal(@drink2, @pub1.get_drink("Vodka"))
   end
 
+  def test_pub_get_drink_price
+    assert_equal(4, @pub1.drink_price("Tennents"))
+  end
+
+
 end
